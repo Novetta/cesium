@@ -1,11 +1,11 @@
-defineSuite([
+define([
         'Scene/Cesium3DTileset',
         'Core/Cartesian2',
         'Core/Cartesian3',
         'Core/Cartographic',
         'Core/Color',
-        'Core/defined',
         'Core/CullingVolume',
+        'Core/defined',
         'Core/getAbsoluteUri',
         'Core/getStringFromTypedArray',
         'Core/HeadingPitchRange',
@@ -42,8 +42,8 @@ defineSuite([
         Cartesian3,
         Cartographic,
         Color,
-        defined,
         CullingVolume,
+        defined,
         getAbsoluteUri,
         getStringFromTypedArray,
         HeadingPitchRange,
@@ -74,7 +74,9 @@ defineSuite([
         createScene,
         pollToPromise,
         when) {
-    'use strict';
+        'use strict';
+
+describe('Scene/Cesium3DTileset', function() {
 
     // It's not easily possible to mock the most detailed pick functions
     // so don't run those tests when using the WebGL stub
@@ -2228,12 +2230,14 @@ defineSuite([
 
             // Check that the feature is red
             var sourceRed;
+            var sourceGreen;
             var renderOptions = {
                 scene : scene,
                 time : new JulianDate(2457522.154792)
             };
             expect(renderOptions).toRenderAndCall(function(rgba) {
                 sourceRed = rgba[0];
+                sourceGreen = rgba[1];
             });
 
             expect(renderOptions).toRenderAndCall(function(rgba) {
@@ -2318,7 +2322,7 @@ defineSuite([
                 mixGreen = rgba[1];
                 expect(rgba[0]).toBeGreaterThan(replaceRed);
                 expect(rgba[0]).toBeLessThan(sourceRed);
-                expect(rgba[1]).toBeGreaterThan(50);
+                expect(rgba[1]).toBeGreaterThan(sourceGreen);
                 expect(rgba[1]).toBeLessThan(replaceGreen);
                 expect(rgba[2]).toBeLessThan(25);
                 expect(rgba[3]).toEqual(255);
@@ -3712,3 +3716,4 @@ defineSuite([
         });
     });
 }, 'WebGL');
+});
