@@ -1,16 +1,6 @@
-define([
-        'Core/OpenCageGeocoderService',
-        'Core/Cartesian3',
-        'Core/GeocodeType',
-        'Core/Resource',
-        'ThirdParty/when'
-    ], function(
-        OpenCageGeocoderService,
-        Cartesian3,
-        GeocodeType,
-        Resource,
-        when) {
-        'use strict';
+import { OpenCageGeocoderService } from '../../Source/Cesium.js';
+import { Resource } from '../../Source/Cesium.js';
+import { when } from '../../Source/Cesium.js';
 
 describe('Core/OpenCageGeocoderService', function() {
 
@@ -74,5 +64,4 @@ describe('Core/OpenCageGeocoderService', function() {
                 expect(results.length).toEqual(0);
             });
     });
-});
 });

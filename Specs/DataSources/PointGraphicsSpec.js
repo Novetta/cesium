@@ -1,18 +1,9 @@
-define([
-        'DataSources/PointGraphics',
-        'Core/Color',
-        'Core/DistanceDisplayCondition',
-        'Core/NearFarScalar',
-        'DataSources/ConstantProperty',
-        'Scene/HeightReference'
-    ], function(
-        PointGraphics,
-        Color,
-        DistanceDisplayCondition,
-        NearFarScalar,
-        ConstantProperty,
-        HeightReference) {
-        'use strict';
+import { Color } from '../../Source/Cesium.js';
+import { DistanceDisplayCondition } from '../../Source/Cesium.js';
+import { NearFarScalar } from '../../Source/Cesium.js';
+import { ConstantProperty } from '../../Source/Cesium.js';
+import { PointGraphics } from '../../Source/Cesium.js';
+import { HeightReference } from '../../Source/Cesium.js';
 
 describe('DataSources/PointGraphics', function() {
 
@@ -150,5 +141,4 @@ describe('DataSources/PointGraphics', function() {
             target.merge(undefined);
         }).toThrowDeveloperError();
     });
-});
 });

@@ -1,20 +1,8 @@
-define([
-        'Core/IonGeocoderService',
-        'Core/GeocodeType',
-        'Core/Ion',
-        'Core/Rectangle',
-        'Core/Resource',
-        'Specs/createScene',
-        'ThirdParty/when'
-    ], function(
-        IonGeocoderService,
-        GeocodeType,
-        Ion,
-        Rectangle,
-        Resource,
-        createScene,
-        when) {
-        'use strict';
+import { GeocodeType } from '../../Source/Cesium.js';
+import { Ion } from '../../Source/Cesium.js';
+import { IonGeocoderService } from '../../Source/Cesium.js';
+import createScene from '../createScene.js';
+import { when } from '../../Source/Cesium.js';
 
 describe('Core/IonGeocoderService', function() {
 
@@ -59,5 +47,4 @@ describe('Core/IonGeocoderService', function() {
         expect(result).toBe(expectedResult);
         expect(service._pelias.geocode).toHaveBeenCalledWith(query, GeocodeType.SEARCH);
    });
-});
 });

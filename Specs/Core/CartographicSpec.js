@@ -1,14 +1,7 @@
-define([
-        'Core/Cartographic',
-        'Core/Cartesian3',
-        'Core/Ellipsoid',
-        'Core/Math'
-    ], function(
-        Cartographic,
-        Cartesian3,
-        Ellipsoid,
-        CesiumMath) {
-        'use strict';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { Cartographic } from '../../Source/Cesium.js';
+import { Ellipsoid } from '../../Source/Cesium.js';
+import { Math as CesiumMath } from '../../Source/Cesium.js';
 
 describe('Core/Cartographic', function() {
 
@@ -196,5 +189,4 @@ describe('Core/Cartographic', function() {
             Cartographic.equalsEpsilon(new Cartographic(), new Cartographic(), {});
         }).toThrowDeveloperError();
     });
-});
 });

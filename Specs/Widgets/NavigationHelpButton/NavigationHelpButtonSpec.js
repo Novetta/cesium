@@ -1,12 +1,6 @@
-define([
-        'Widgets/NavigationHelpButton/NavigationHelpButton',
-        'Core/FeatureDetection',
-        'Specs/DomEventSimulator'
-    ], function(
-        NavigationHelpButton,
-        FeatureDetection,
-        DomEventSimulator) {
-        'use strict';
+import { FeatureDetection } from '../../../Source/Cesium.js';
+import DomEventSimulator from '../../DomEventSimulator.js';
+import { NavigationHelpButton } from '../../../Source/Cesium.js';
 
 describe('Widgets/NavigationHelpButton/NavigationHelpButton', function() {
 
@@ -103,5 +97,4 @@ describe('Widgets/NavigationHelpButton/NavigationHelpButton', function() {
             });
         }).toThrowDeveloperError();
     });
-});
 });

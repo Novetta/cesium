@@ -1,10 +1,5 @@
-define([
-        'Core/QuadraticRealPolynomial',
-        'Core/Math'
-    ], function(
-        QuadraticRealPolynomial,
-        CesiumMath) {
-        'use strict';
+import { Math as CesiumMath } from '../../Source/Cesium.js';
+import { QuadraticRealPolynomial } from '../../Source/Cesium.js';
 
 describe('Core/QuadraticRealPolynomial', function() {
 
@@ -118,5 +113,4 @@ describe('Core/QuadraticRealPolynomial', function() {
         expect(roots[0]).toEqual(0.0);
         expect(roots[1]).toEqual(3.0);
     });
-});
 });

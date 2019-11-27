@@ -1,14 +1,7 @@
-define([
-        'Widgets/CesiumInspector/CesiumInspector',
-        'Core/Ellipsoid',
-        'Scene/Globe',
-        'Specs/createScene'
-    ], function(
-        CesiumInspector,
-        Ellipsoid,
-        Globe,
-        createScene) {
-        'use strict';
+import { Ellipsoid } from '../../../Source/Cesium.js';
+import { Globe } from '../../../Source/Cesium.js';
+import createScene from '../../createScene.js';
+import { CesiumInspector } from '../../../Source/Cesium.js';
 
 describe('Widgets/CesiumInspector/CesiumInspector', function() {
 
@@ -57,4 +50,3 @@ describe('Widgets/CesiumInspector/CesiumInspector', function() {
         }).toThrowDeveloperError();
     });
 }, 'WebGL');
-});

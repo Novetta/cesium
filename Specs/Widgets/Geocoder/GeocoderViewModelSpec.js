@@ -1,18 +1,9 @@
-define([
-        'Widgets/Geocoder/GeocoderViewModel',
-        'Core/Cartesian3',
-        'Core/Rectangle',
-        'Specs/createScene',
-        'Specs/pollToPromise',
-        'ThirdParty/when'
-    ], function(
-        GeocoderViewModel,
-        Cartesian3,
-        Rectangle,
-        createScene,
-        pollToPromise,
-        when) {
-        'use strict';
+import { Cartesian3 } from '../../../Source/Cesium.js';
+import { Rectangle } from '../../../Source/Cesium.js';
+import createScene from '../../createScene.js';
+import pollToPromise from '../../pollToPromise.js';
+import { when } from '../../../Source/Cesium.js';
+import { GeocoderViewModel } from '../../../Source/Cesium.js';
 
 describe('Widgets/Geocoder/GeocoderViewModel', function() {
 
@@ -258,4 +249,3 @@ describe('Widgets/Geocoder/GeocoderViewModel', function() {
         expect(viewModel._selectedSuggestion).toBeUndefined();
     });
 }, 'WebGL');
-});

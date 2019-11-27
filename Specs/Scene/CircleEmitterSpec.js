@@ -1,12 +1,6 @@
-define([
-        'Scene/CircleEmitter',
-        'Core/Cartesian3',
-        'Scene/Particle'
-    ], function(
-        CircleEmitter,
-        Cartesian3,
-        Particle) {
-        'use strict';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { CircleEmitter } from '../../Source/Cesium.js';
+import { Particle } from '../../Source/Cesium.js';
 
 describe('Scene/CircleEmitter', function() {
 
@@ -61,5 +55,4 @@ describe('Scene/CircleEmitter', function() {
             expect(particle.velocity).toEqual(Cartesian3.UNIT_Z);
         }
     });
-});
 });

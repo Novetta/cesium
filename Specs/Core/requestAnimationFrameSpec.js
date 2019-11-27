@@ -1,12 +1,6 @@
-define([
-        'Core/requestAnimationFrame',
-        'Core/cancelAnimationFrame',
-        'ThirdParty/when'
-    ], function(
-        requestAnimationFrame,
-        cancelAnimationFrame,
-        when) {
-        'use strict';
+import { cancelAnimationFrame } from '../../Source/Cesium.js';
+import { requestAnimationFrame } from '../../Source/Cesium.js';
+import { when } from '../../Source/Cesium.js';
 
 describe('Core/requestAnimationFrame', function() {
 
@@ -58,5 +52,4 @@ describe('Core/requestAnimationFrame', function() {
 
         return deferred.promise;
     });
-});
 });

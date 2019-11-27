@@ -1,12 +1,6 @@
-define([
-        'Core/mergeSort',
-        'Core/BoundingSphere',
-        'Core/Cartesian3'
-    ], function(
-        mergeSort,
-        BoundingSphere,
-        Cartesian3) {
-        'use strict';
+import { BoundingSphere } from '../../Source/Cesium.js';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { mergeSort } from '../../Source/Cesium.js';
 
 describe('Core/mergeSort', function() {
 
@@ -58,5 +52,4 @@ describe('Core/mergeSort', function() {
             mergeSort([0, 1, 2], undefined);
         }).toThrowDeveloperError();
     });
-});
 });

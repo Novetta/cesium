@@ -1,12 +1,6 @@
-define([
-        'Core/TranslationRotationScale',
-        'Core/Cartesian3',
-        'Core/Quaternion'
-    ], function(
-        TranslationRotationScale,
-        Cartesian3,
-        Quaternion) {
-        'use strict';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { Quaternion } from '../../Source/Cesium.js';
+import { TranslationRotationScale } from '../../Source/Cesium.js';
 
 describe('Core/TranslationRotationScale', function() {
 
@@ -53,5 +47,4 @@ describe('Core/TranslationRotationScale', function() {
         right.rotation = Quaternion.ZERO;
         expect(left.equals(right)).toEqual(false);
     });
-});
 });

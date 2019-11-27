@@ -1,18 +1,9 @@
-define([
-        'Core/Quaternion',
-        'Core/Cartesian3',
-        'Core/HeadingPitchRoll',
-        'Core/Math',
-        'Core/Matrix3',
-        'Specs/createPackableSpecs'
-    ], function(
-        Quaternion,
-        Cartesian3,
-        HeadingPitchRoll,
-        CesiumMath,
-        Matrix3,
-        createPackableSpecs) {
-        'use strict';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { HeadingPitchRoll } from '../../Source/Cesium.js';
+import { Math as CesiumMath } from '../../Source/Cesium.js';
+import { Matrix3 } from '../../Source/Cesium.js';
+import { Quaternion } from '../../Source/Cesium.js';
+import createPackableSpecs from '../createPackableSpecs.js';
 
 describe('Core/Quaternion', function() {
 
@@ -1017,5 +1008,4 @@ describe('Core/Quaternion', function() {
     var q = new Quaternion(1, 2, 3, 4);
     Quaternion.normalize(q, q);
     createPackableSpecs(Quaternion, q, [q.x, q.y, q.z, q.w]);
-});
 });

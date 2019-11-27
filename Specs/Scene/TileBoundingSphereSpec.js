@@ -1,20 +1,10 @@
-define([
-        'Scene/TileBoundingSphere',
-        'Core/Cartesian3',
-        'Core/Color',
-        'Core/Intersect',
-        'Core/Math',
-        'Core/Plane',
-        'Specs/createFrameState'
-    ], function(
-        TileBoundingSphere,
-        Cartesian3,
-        Color,
-        Intersect,
-        CesiumMath,
-        Plane,
-        createFrameState) {
-        'use strict';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { Color } from '../../Source/Cesium.js';
+import { Intersect } from '../../Source/Cesium.js';
+import { Math as CesiumMath } from '../../Source/Cesium.js';
+import { Plane } from '../../Source/Cesium.js';
+import { TileBoundingSphere } from '../../Source/Cesium.js';
+import createFrameState from '../createFrameState.js';
 
 describe('Scene/TileBoundingSphere', function() {
 
@@ -71,5 +61,4 @@ describe('Scene/TileBoundingSphere', function() {
         expect(tileBoundingSphere.intersectPlane(plane)).toEqual(Intersect.INTERSECTING);
     });
 
-});
 });

@@ -1,14 +1,7 @@
-define([
-        'Core/PinBuilder',
-        'Core/buildModuleUrl',
-        'Core/Color',
-        'ThirdParty/when'
-    ], function(
-        PinBuilder,
-        buildModuleUrl,
-        Color,
-        when) {
-        'use strict';
+import { buildModuleUrl } from '../../Source/Cesium.js';
+import { Color } from '../../Source/Cesium.js';
+import { PinBuilder } from '../../Source/Cesium.js';
+import { when } from '../../Source/Cesium.js';
 
 describe('Core/PinBuilder', function() {
 
@@ -141,5 +134,4 @@ describe('Core/PinBuilder', function() {
             builder.fromMakiIconId('hospital', Color.RED, undefined);
         }).toThrowDeveloperError();
     });
-});
 });

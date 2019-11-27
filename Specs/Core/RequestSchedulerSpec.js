@@ -1,14 +1,7 @@
-define([
-        'Core/RequestScheduler',
-        'Core/Request',
-        'Core/RequestState',
-        'ThirdParty/when'
-    ], function(
-        RequestScheduler,
-        Request,
-        RequestState,
-        when) {
-        'use strict';
+import { Request } from '../../Source/Cesium.js';
+import { RequestScheduler } from '../../Source/Cesium.js';
+import { RequestState } from '../../Source/Cesium.js';
+import { when } from '../../Source/Cesium.js';
 
 describe('Core/RequestScheduler', function() {
 
@@ -888,5 +881,4 @@ describe('Core/RequestScheduler', function() {
         }));
         expect(promise).toBeUndefined();
     });
-});
 });

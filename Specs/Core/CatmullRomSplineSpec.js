@@ -1,14 +1,7 @@
-define([
-        'Core/CatmullRomSpline',
-        'Core/Cartesian3',
-        'Core/HermiteSpline',
-        'Core/Math'
-    ], function(
-        CatmullRomSpline,
-        Cartesian3,
-        HermiteSpline,
-        CesiumMath) {
-        'use strict';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { CatmullRomSpline } from '../../Source/Cesium.js';
+import { HermiteSpline } from '../../Source/Cesium.js';
+import { Math as CesiumMath } from '../../Source/Cesium.js';
 
 describe('Core/CatmullRomSpline', function() {
 
@@ -172,5 +165,4 @@ describe('Core/CatmullRomSpline', function() {
         expect(actual).toBe(result);
         expect(actual).toEqual(Cartesian3.lerp(points[0], points[1], t, new Cartesian3()));
     });
-});
 });

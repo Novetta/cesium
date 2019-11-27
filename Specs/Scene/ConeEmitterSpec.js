@@ -1,14 +1,7 @@
-define([
-        'Scene/ConeEmitter',
-        'Core/Cartesian3',
-        'Core/Math',
-        'Scene/Particle'
-    ], function(
-        ConeEmitter,
-        Cartesian3,
-        CesiumMath,
-        Particle) {
-        'use strict';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { Math as CesiumMath } from '../../Source/Cesium.js';
+import { ConeEmitter } from '../../Source/Cesium.js';
+import { Particle } from '../../Source/Cesium.js';
 
 describe('Scene/ConeEmitter', function() {
 
@@ -48,5 +41,4 @@ describe('Scene/ConeEmitter', function() {
             expect(Math.acos(particle.velocity.z)).toBeLessThanOrEqualTo(emitter.angle);
         }
     });
-});
 });

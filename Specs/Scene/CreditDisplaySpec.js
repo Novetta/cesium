@@ -1,14 +1,7 @@
-define([
-        'Scene/CreditDisplay',
-        'Core/Credit',
-        'Core/defined',
-        'Specs/absolutize'
-    ], function(
-        CreditDisplay,
-        Credit,
-        defined,
-        absolutize) {
-        'use strict';
+import { Credit } from '../../Source/Cesium.js';
+import { defined } from '../../Source/Cesium.js';
+import { CreditDisplay } from '../../Source/Cesium.js';
+import absolutize from '../absolutize.js';
 
 describe('Scene/CreditDisplay', function() {
 
@@ -385,5 +378,4 @@ describe('Scene/CreditDisplay', function() {
         expect(creditDisplay._currentCesiumCredit).toEqual(creditDisplay2._currentCesiumCredit);
         expect(creditDisplay._currentCesiumCredit).not.toBe(creditDisplay2._currentCesiumCredit);
     });
-});
 });

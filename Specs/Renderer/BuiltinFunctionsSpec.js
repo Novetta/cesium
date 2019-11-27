@@ -1,24 +1,12 @@
-define([
-        'Core/BoundingRectangle',
-        'Core/Cartesian3',
-        'Core/Cartesian4',
-        'Core/EncodedCartesian3',
-        'Core/Math',
-        'Specs/createCamera',
-        'Specs/createContext',
-        'Specs/createFrameState'
-    ], 'Renderer/BuiltinFunctions', function(
-        BoundingRectangle,
-        Cartesian3,
-        Cartesian4,
-        EncodedCartesian3,
-        CesiumMath,
-        createCamera,
-        createContext,
-        createFrameState) {
-        'use strict';
+import { BoundingRectangle } from '../../Source/Cesium.js';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { Cartesian4 } from '../../Source/Cesium.js';
+import { EncodedCartesian3 } from '../../Source/Cesium.js';
+import createCamera from '../createCamera.js';
+import createContext from '../createContext.js';
+import createFrameState from '../createFrameState.js';
 
-describe('Core/BoundingRectangle', function() {
+describe('Renderer/BuiltinFunctions', function() {
 
     var context;
 
@@ -531,4 +519,3 @@ describe('Core/BoundingRectangle', function() {
     });
 
 }, 'WebGL');
-});

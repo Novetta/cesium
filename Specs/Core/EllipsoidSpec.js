@@ -1,16 +1,8 @@
-define([
-        'Core/Ellipsoid',
-        'Core/Cartesian3',
-        'Core/Cartographic',
-        'Core/Math',
-        'Specs/createPackableSpecs'
-    ], function(
-        Ellipsoid,
-        Cartesian3,
-        Cartographic,
-        CesiumMath,
-        createPackableSpecs) {
-        'use strict';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { Cartographic } from '../../Source/Cesium.js';
+import { Ellipsoid } from '../../Source/Cesium.js';
+import { Math as CesiumMath } from '../../Source/Cesium.js';
+import createPackableSpecs from '../createPackableSpecs.js';
 
 describe('Core/Ellipsoid', function() {
 
@@ -545,5 +537,4 @@ describe('Core/Ellipsoid', function() {
     });
 
     createPackableSpecs(Ellipsoid, Ellipsoid.WGS84, [Ellipsoid.WGS84.radii.x, Ellipsoid.WGS84.radii.y, Ellipsoid.WGS84.radii.z]);
-});
 });

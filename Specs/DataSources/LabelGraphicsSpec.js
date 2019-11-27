@@ -1,26 +1,13 @@
-define([
-        'DataSources/LabelGraphics',
-        'Core/Cartesian2',
-        'Core/Cartesian3',
-        'Core/Color',
-        'Core/DistanceDisplayCondition',
-        'Core/NearFarScalar',
-        'DataSources/ConstantProperty',
-        'Scene/HorizontalOrigin',
-        'Scene/LabelStyle',
-        'Scene/VerticalOrigin'
-    ], function(
-        LabelGraphics,
-        Cartesian2,
-        Cartesian3,
-        Color,
-        DistanceDisplayCondition,
-        NearFarScalar,
-        ConstantProperty,
-        HorizontalOrigin,
-        LabelStyle,
-        VerticalOrigin) {
-        'use strict';
+import { Cartesian2 } from '../../Source/Cesium.js';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { Color } from '../../Source/Cesium.js';
+import { DistanceDisplayCondition } from '../../Source/Cesium.js';
+import { NearFarScalar } from '../../Source/Cesium.js';
+import { ConstantProperty } from '../../Source/Cesium.js';
+import { LabelGraphics } from '../../Source/Cesium.js';
+import { HorizontalOrigin } from '../../Source/Cesium.js';
+import { LabelStyle } from '../../Source/Cesium.js';
+import { VerticalOrigin } from '../../Source/Cesium.js';
 
 describe('DataSources/LabelGraphics', function() {
 
@@ -247,5 +234,4 @@ describe('DataSources/LabelGraphics', function() {
             target.merge(undefined);
         }).toThrowDeveloperError();
     });
-});
 });

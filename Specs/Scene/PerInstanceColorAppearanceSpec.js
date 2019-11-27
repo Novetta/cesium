@@ -1,22 +1,11 @@
-define([
-        'Scene/PerInstanceColorAppearance',
-        'Core/ColorGeometryInstanceAttribute',
-        'Core/GeometryInstance',
-        'Core/Rectangle',
-        'Core/RectangleGeometry',
-        'Scene/Appearance',
-        'Scene/Primitive',
-        'Specs/createScene'
-    ], function(
-        PerInstanceColorAppearance,
-        ColorGeometryInstanceAttribute,
-        GeometryInstance,
-        Rectangle,
-        RectangleGeometry,
-        Appearance,
-        Primitive,
-        createScene) {
-        'use strict';
+import { ColorGeometryInstanceAttribute } from '../../Source/Cesium.js';
+import { GeometryInstance } from '../../Source/Cesium.js';
+import { Rectangle } from '../../Source/Cesium.js';
+import { RectangleGeometry } from '../../Source/Cesium.js';
+import { Appearance } from '../../Source/Cesium.js';
+import { PerInstanceColorAppearance } from '../../Source/Cesium.js';
+import { Primitive } from '../../Source/Cesium.js';
+import createScene from '../createScene.js';
 
 describe('Scene/PerInstanceColorAppearance', function() {
 
@@ -92,4 +81,3 @@ describe('Scene/PerInstanceColorAppearance', function() {
     });
 
 }, 'WebGL');
-});

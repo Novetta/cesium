@@ -1,16 +1,8 @@
-define([
-        'DataSources/createMaterialPropertyDescriptor',
-        'Core/Color',
-        'Core/Event',
-        'DataSources/ColorMaterialProperty',
-        'DataSources/ImageMaterialProperty'
-    ], function(
-        createMaterialPropertyDescriptor,
-        Color,
-        Event,
-        ColorMaterialProperty,
-        ImageMaterialProperty) {
-        'use strict';
+import { Color } from '../../Source/Cesium.js';
+import { Event } from '../../Source/Cesium.js';
+import { ColorMaterialProperty } from '../../Source/Cesium.js';
+import { createMaterialPropertyDescriptor } from '../../Source/Cesium.js';
+import { ImageMaterialProperty } from '../../Source/Cesium.js';
 
 describe('DataSources/createMaterialPropertyDescriptor', function() {
 
@@ -52,5 +44,4 @@ describe('DataSources/createMaterialPropertyDescriptor', function() {
             instance.materialProperty = {};
         }).toThrowDeveloperError();
     });
-});
 });

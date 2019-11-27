@@ -1,28 +1,13 @@
-define([
-        'Core/Resource',
-        'Core/DefaultProxy',
-        'Core/defaultValue',
-        'Core/queryToObject',
-        'Core/Request',
-        'Core/RequestErrorEvent',
-        'Core/RequestScheduler',
-        'Core/TrustedServers',
-        'Specs/createCanvas',
-        'ThirdParty/Uri',
-        'ThirdParty/when'
-    ], function(
-        Resource,
-        DefaultProxy,
-        defaultValue,
-        queryToObject,
-        Request,
-        RequestErrorEvent,
-        RequestScheduler,
-        TrustedServers,
-        createCanvas,
-        Uri,
-        when) {
-        'use strict';
+import { DefaultProxy } from '../../Source/Cesium.js';
+import { defaultValue } from '../../Source/Cesium.js';
+import { queryToObject } from '../../Source/Cesium.js';
+import { Request } from '../../Source/Cesium.js';
+import { RequestErrorEvent } from '../../Source/Cesium.js';
+import { RequestScheduler } from '../../Source/Cesium.js';
+import { Resource } from '../../Source/Cesium.js';
+import createCanvas from '../createCanvas.js';
+import { Uri } from '../../Source/Cesium.js';
+import { when } from '../../Source/Cesium.js';
 
 describe('Core/Resource', function() {
 
@@ -1735,7 +1720,6 @@ describe('Core/Resource', function() {
                 }).then(function(result) {
                     expect(result.type).toEqual('image/png');
 
-                    /*global URL*/
                     var blobUrl = URL.createObjectURL(result);
 
                     return Resource.fetchImage(blobUrl).then(function(image) {
@@ -2342,5 +2326,4 @@ describe('Core/Resource', function() {
         });
     });
 
-});
 });

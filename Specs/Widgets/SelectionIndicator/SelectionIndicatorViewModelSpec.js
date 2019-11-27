@@ -1,14 +1,7 @@
-define([
-        'Widgets/SelectionIndicator/SelectionIndicatorViewModel',
-        'Core/Cartesian2',
-        'Core/Cartesian3',
-        'Specs/createScene'
-    ], function(
-        SelectionIndicatorViewModel,
-        Cartesian2,
-        Cartesian3,
-        createScene) {
-        'use strict';
+import { Cartesian2 } from '../../../Source/Cesium.js';
+import { Cartesian3 } from '../../../Source/Cesium.js';
+import createScene from '../../createScene.js';
+import { SelectionIndicatorViewModel } from '../../../Source/Cesium.js';
 
 describe('Widgets/SelectionIndicator/SelectionIndicatorViewModel', function() {
 
@@ -99,4 +92,3 @@ describe('Widgets/SelectionIndicator/SelectionIndicatorViewModel', function() {
         document.body.removeChild(container);
     });
 }, 'WebGL');
-});

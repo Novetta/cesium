@@ -1,10 +1,5 @@
-define([
-        'Widgets/FullscreenButton/FullscreenButtonViewModel',
-        'Core/Fullscreen'
-    ], function(
-        FullscreenButtonViewModel,
-        Fullscreen) {
-        'use strict';
+import { Fullscreen } from '../../../Source/Cesium.js';
+import { FullscreenButtonViewModel } from '../../../Source/Cesium.js';
 
 describe('Widgets/FullscreenButton/FullscreenButtonViewModel', function() {
 
@@ -55,5 +50,4 @@ describe('Widgets/FullscreenButton/FullscreenButtonViewModel', function() {
             viewModel.fullscreenElement = {};
         }).toThrowDeveloperError();
     });
-});
 });

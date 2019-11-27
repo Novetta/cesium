@@ -1,18 +1,9 @@
-define([
-        'Core/Plane',
-        'Core/Cartesian3',
-        'Core/Cartesian4',
-        'Core/Math',
-        'Core/Matrix3',
-        'Core/Matrix4'
-    ], function(
-        Plane,
-        Cartesian3,
-        Cartesian4,
-        CesiumMath,
-        Matrix3,
-        Matrix4) {
-        'use strict';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { Cartesian4 } from '../../Source/Cesium.js';
+import { Math as CesiumMath } from '../../Source/Cesium.js';
+import { Matrix3 } from '../../Source/Cesium.js';
+import { Matrix4 } from '../../Source/Cesium.js';
+import { Plane } from '../../Source/Cesium.js';
 
 describe('Core/Plane', function() {
 
@@ -252,5 +243,4 @@ describe('Core/Plane', function() {
             return Plane.transform(plane, undefined);
         }).toThrowDeveloperError();
     });
-});
 });

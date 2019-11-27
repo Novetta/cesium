@@ -1,14 +1,7 @@
-define([
-        'DataSources/CustomDataSource',
-        'Core/Event',
-        'DataSources/DataSourceClock',
-        'DataSources/EntityCollection'
-    ], function(
-        CustomDataSource,
-        Event,
-        DataSourceClock,
-        EntityCollection) {
-        'use strict';
+import { Event } from '../../Source/Cesium.js';
+import { CustomDataSource } from '../../Source/Cesium.js';
+import { DataSourceClock } from '../../Source/Cesium.js';
+import { EntityCollection } from '../../Source/Cesium.js';
 
 describe('DataSources/CustomDataSource', function() {
 
@@ -83,5 +76,4 @@ describe('DataSources/CustomDataSource', function() {
         expect(entityCollection.owner).toEqual(dataSource);
     });
 
-});
 });

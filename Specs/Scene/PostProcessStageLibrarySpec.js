@@ -1,38 +1,15 @@
-define([
-        'Scene/PostProcessStageLibrary',
-        'Core/Cartesian3',
-        'Core/defined',
-        'Core/destroyObject',
-        'Core/HeadingPitchRange',
-        'Core/HeadingPitchRoll',
-        'Core/Matrix4',
-        'Core/Transforms',
-        'Renderer/Pass',
-        'Renderer/RenderState',
-        'Scene/Model',
-        'Specs/createCanvas',
-        'Specs/createScene',
-        'Specs/pollToPromise',
-        'Specs/ViewportPrimitive',
-        'ThirdParty/when'
-    ], function(
-        PostProcessStageLibrary,
-        Cartesian3,
-        defined,
-        destroyObject,
-        HeadingPitchRange,
-        HeadingPitchRoll,
-        Matrix4,
-        Transforms,
-        Pass,
-        RenderState,
-        Model,
-        createCanvas,
-        createScene,
-        pollToPromise,
-        ViewportPrimitive,
-        when) {
-        'use strict';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { HeadingPitchRange } from '../../Source/Cesium.js';
+import { HeadingPitchRoll } from '../../Source/Cesium.js';
+import { Matrix4 } from '../../Source/Cesium.js';
+import { Transforms } from '../../Source/Cesium.js';
+import { Model } from '../../Source/Cesium.js';
+import { PostProcessStageLibrary } from '../../Source/Cesium.js';
+import createCanvas from '../createCanvas.js';
+import createScene from '../createScene.js';
+import pollToPromise from '../pollToPromise.js';
+import ViewportPrimitive from '../ViewportPrimitive.js';
+import { when } from '../../Source/Cesium.js';
 
 describe('Scene/PostProcessStageLibrary', function() {
 
@@ -512,4 +489,3 @@ describe('Scene/PostProcessStageLibrary', function() {
     });
 
 }, 'WebGL');
-});

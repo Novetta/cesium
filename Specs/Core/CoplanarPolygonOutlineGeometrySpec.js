@@ -1,16 +1,6 @@
-define([
-        'Core/CoplanarPolygonOutlineGeometry',
-        'Core/Cartesian3',
-        'Core/Ellipsoid',
-        'Core/Math',
-        'Specs/createPackableSpecs'
-    ], function(
-        CoplanarPolygonOutlineGeometry,
-        Cartesian3,
-        Ellipsoid,
-        CesiumMath,
-        createPackableSpecs) {
-        'use strict';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { CoplanarPolygonOutlineGeometry } from '../../Source/Cesium.js';
+import createPackableSpecs from '../createPackableSpecs.js';
 
 describe('Core/CoplanarPolygonOutlineGeometry', function() {
 
@@ -125,5 +115,4 @@ describe('Core/CoplanarPolygonOutlineGeometry', function() {
     packedInstance.push(34);
 
     createPackableSpecs(CoplanarPolygonOutlineGeometry, polygon, packedInstance);
-});
 });

@@ -1,18 +1,15 @@
-define([
-        'Core/sampleTerrain',
-        'Core/Cartographic',
-        'Core/CesiumTerrainProvider',
-        'Core/createWorldTerrain'
-    ], function(
-        sampleTerrain,
-        Cartographic,
-        CesiumTerrainProvider,
-        createWorldTerrain) {
-        'use strict';
+import { Cartographic } from '../../Source/Cesium.js';
+import { CesiumTerrainProvider } from '../../Source/Cesium.js';
+import { createWorldTerrain } from '../../Source/Cesium.js';
+import { sampleTerrain } from '../../Source/Cesium.js';
 
 describe('Core/sampleTerrain', function() {
 
-    var worldTerrain = createWorldTerrain();
+    var worldTerrain;
+    beforeAll(function() {
+        worldTerrain = createWorldTerrain();
+        return worldTerrain.readyPromise;
+    });
 
     it('queries heights', function() {
         var positions = [
@@ -101,5 +98,4 @@ describe('Core/sampleTerrain', function() {
             expect(positions[0].height).toBeDefined();
         });
     });
-});
 });

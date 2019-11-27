@@ -1,14 +1,5 @@
-define([
-        'Widgets/Geocoder/Geocoder',
-        'Core/Cartesian3',
-        'Specs/createScene',
-        'ThirdParty/when'
-    ], function(
-        Geocoder,
-        Cartesian3,
-        createScene,
-        when) {
-        'use strict';
+import createScene from '../../createScene.js';
+import { Geocoder } from '../../../Source/Cesium.js';
 
 describe('Widgets/Geocoder/Geocoder', function() {
 
@@ -84,4 +75,3 @@ describe('Widgets/Geocoder/Geocoder', function() {
         }).toThrowDeveloperError();
     });
 }, 'WebGL');
-});

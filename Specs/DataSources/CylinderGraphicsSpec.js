@@ -1,22 +1,11 @@
-define([
-        'DataSources/CylinderGraphics',
-        'Core/Color',
-        'Core/DistanceDisplayCondition',
-        'DataSources/ColorMaterialProperty',
-        'DataSources/ConstantProperty',
-        'Scene/ShadowMode',
-        'Specs/testDefinitionChanged',
-        'Specs/testMaterialDefinitionChanged'
-    ], function(
-        CylinderGraphics,
-        Color,
-        DistanceDisplayCondition,
-        ColorMaterialProperty,
-        ConstantProperty,
-        ShadowMode,
-        testDefinitionChanged,
-        testMaterialDefinitionChanged) {
-        'use strict';
+import { Color } from '../../Source/Cesium.js';
+import { DistanceDisplayCondition } from '../../Source/Cesium.js';
+import { ColorMaterialProperty } from '../../Source/Cesium.js';
+import { ConstantProperty } from '../../Source/Cesium.js';
+import { CylinderGraphics } from '../../Source/Cesium.js';
+import { ShadowMode } from '../../Source/Cesium.js';
+import testDefinitionChanged from '../testDefinitionChanged.js';
+import testMaterialDefinitionChanged from '../testMaterialDefinitionChanged.js';
 
 describe('DataSources/CylinderGraphics', function() {
 
@@ -197,5 +186,4 @@ describe('DataSources/CylinderGraphics', function() {
         testDefinitionChanged(property, 'shadows', ShadowMode.ENABLED, ShadowMode.DISABLED);
         testDefinitionChanged(property, 'distanceDisplayCondition', new DistanceDisplayCondition(), new DistanceDisplayCondition(10.0, 100.0));
     });
-});
 });

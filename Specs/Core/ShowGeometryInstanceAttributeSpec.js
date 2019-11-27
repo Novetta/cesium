@@ -1,10 +1,5 @@
-define([
-        'Core/ShowGeometryInstanceAttribute',
-        'Core/ComponentDatatype'
-    ], function(
-        ShowGeometryInstanceAttribute,
-        ComponentDatatype) {
-        'use strict';
+import { ComponentDatatype } from '../../Source/Cesium.js';
+import { ShowGeometryInstanceAttribute } from '../../Source/Cesium.js';
 
 describe('Core/ShowGeometryInstanceAttribute', function() {
 
@@ -36,5 +31,4 @@ describe('Core/ShowGeometryInstanceAttribute', function() {
         }).toThrowDeveloperError();
     });
 
-});
 });

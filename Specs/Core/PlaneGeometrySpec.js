@@ -1,14 +1,7 @@
-define([
-        'Core/PlaneGeometry',
-        'Core/Cartesian3',
-        'Core/VertexFormat',
-        'Specs/createPackableSpecs'
-    ], function(
-        PlaneGeometry,
-        Cartesian3,
-        VertexFormat,
-        createPackableSpecs) {
-        'use strict';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { PlaneGeometry } from '../../Source/Cesium.js';
+import { VertexFormat } from '../../Source/Cesium.js';
+import createPackableSpecs from '../createPackableSpecs.js';
 
 describe('Core/PlaneGeometry', function() {
 
@@ -43,5 +36,4 @@ describe('Core/PlaneGeometry', function() {
     createPackableSpecs(PlaneGeometry, new PlaneGeometry({
         vertexFormat : VertexFormat.POSITION_AND_NORMAL
     }), [1.0, 1.0, 0.0, 0.0, 0.0, 0.0]);
-});
 });

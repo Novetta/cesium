@@ -1,14 +1,7 @@
-define([
-        'Scene/DiscardEmptyTileImagePolicy',
-        'Core/Resource',
-        'Specs/pollToPromise',
-        'ThirdParty/when'
-    ], function(
-        DiscardEmptyTileImagePolicy,
-        Resource,
-        pollToPromise,
-        when) {
-        'use strict';
+import { Resource } from '../../Source/Cesium.js';
+import { DiscardEmptyTileImagePolicy } from '../../Source/Cesium.js';
+import pollToPromise from '../pollToPromise.js';
+import { when } from '../../Source/Cesium.js';
 
 describe('Scene/DiscardEmptyTileImagePolicy', function() {
 
@@ -53,5 +46,4 @@ describe('Scene/DiscardEmptyTileImagePolicy', function() {
         });
 
     });
-});
 });

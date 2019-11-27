@@ -1,26 +1,13 @@
-define([
-        'Core/GoogleEarthEnterpriseTerrainData',
-        'Core/Cartesian3',
-        'Core/Cartographic',
-        'Core/Ellipsoid',
-        'Core/GeographicTilingScheme',
-        'Core/Math',
-        'Core/Rectangle',
-        'Core/TerrainData',
-        'Core/TerrainMesh',
-        'ThirdParty/when'
-    ], function(
-        GoogleEarthEnterpriseTerrainData,
-        Cartesian3,
-        Cartographic,
-        Ellipsoid,
-        GeographicTilingScheme,
-        CesiumMath,
-        Rectangle,
-        TerrainData,
-        TerrainMesh,
-        when) {
-        'use strict';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { Cartographic } from '../../Source/Cesium.js';
+import { Ellipsoid } from '../../Source/Cesium.js';
+import { GeographicTilingScheme } from '../../Source/Cesium.js';
+import { GoogleEarthEnterpriseTerrainData } from '../../Source/Cesium.js';
+import { Math as CesiumMath } from '../../Source/Cesium.js';
+import { Rectangle } from '../../Source/Cesium.js';
+import { TerrainData } from '../../Source/Cesium.js';
+import { TerrainMesh } from '../../Source/Cesium.js';
+import { when } from '../../Source/Cesium.js';
 
 describe('Core/GoogleEarthEnterpriseTerrainData', function() {
 
@@ -498,5 +485,4 @@ describe('Core/GoogleEarthEnterpriseTerrainData', function() {
             /*eslint-enable no-unused-vars*/
         }).toThrowDeveloperError();
     });
-});
 });

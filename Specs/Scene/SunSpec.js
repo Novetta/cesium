@@ -1,18 +1,9 @@
-define([
-        'Scene/Sun',
-        'Core/BoundingSphere',
-        'Core/Color',
-        'Core/Math',
-        'Scene/SceneMode',
-        'Specs/createScene'
-    ], function(
-        Sun,
-        BoundingSphere,
-        Color,
-        CesiumMath,
-        SceneMode,
-        createScene) {
-        'use strict';
+import { BoundingSphere } from '../../Source/Cesium.js';
+import { Color } from '../../Source/Cesium.js';
+import { Math as CesiumMath } from '../../Source/Cesium.js';
+import { SceneMode } from '../../Source/Cesium.js';
+import { Sun } from '../../Source/Cesium.js';
+import createScene from '../createScene.js';
 
 describe('Scene/Sun', function() {
 
@@ -88,7 +79,7 @@ describe('Scene/Sun', function() {
 
         viewSun(scene.camera, scene.context.uniformState);
         scene.frameState.passes.render = false;
-        var command = scene.sun.update(scene.frameState, scene._view.passState);
+        var command = scene.sun.update(scene.frameState, scene.view.passState);
         expect(command).not.toBeDefined();
     });
 
@@ -117,4 +108,3 @@ describe('Scene/Sun', function() {
         expect(sun.isDestroyed()).toEqual(true);
     });
 }, 'WebGL');
-});

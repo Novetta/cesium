@@ -1,16 +1,8 @@
-define([
-        'Widgets/Cesium3DTilesInspector/Cesium3DTilesInspector',
-        'Core/Ellipsoid',
-        'Scene/Cesium3DTileset',
-        'Scene/Globe',
-        'Specs/createScene'
-    ], function(
-        Cesium3DTilesInspector,
-        Ellipsoid,
-        Cesium3DTileset,
-        Globe,
-        createScene) {
-        'use strict';
+import { Ellipsoid } from '../../../Source/Cesium.js';
+import { Cesium3DTileset } from '../../../Source/Cesium.js';
+import { Globe } from '../../../Source/Cesium.js';
+import createScene from '../../createScene.js';
+import { Cesium3DTilesInspector } from '../../../Source/Cesium.js';
 
 describe('Widgets/Cesium3DTilesInspector/Cesium3DTilesInspector', function() {
 
@@ -84,4 +76,3 @@ describe('Widgets/Cesium3DTilesInspector/Cesium3DTilesInspector', function() {
         });
     });
 }, 'WebGL');
-});

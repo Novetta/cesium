@@ -1,20 +1,10 @@
-define([
-        'Core/IntersectionTests',
-        'Core/BoundingSphere',
-        'Core/Cartesian3',
-        'Core/Ellipsoid',
-        'Core/Math',
-        'Core/Plane',
-        'Core/Ray'
-    ], function(
-        IntersectionTests,
-        BoundingSphere,
-        Cartesian3,
-        Ellipsoid,
-        CesiumMath,
-        Plane,
-        Ray) {
-        'use strict';
+import { BoundingSphere } from '../../Source/Cesium.js';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { Ellipsoid } from '../../Source/Cesium.js';
+import { IntersectionTests } from '../../Source/Cesium.js';
+import { Math as CesiumMath } from '../../Source/Cesium.js';
+import { Plane } from '../../Source/Cesium.js';
+import { Ray } from '../../Source/Cesium.js';
 
 describe('Core/IntersectionTests', function() {
 
@@ -873,5 +863,4 @@ describe('Core/IntersectionTests', function() {
             return IntersectionTests.trianglePlaneIntersection(p, p, p);
         }).toThrowDeveloperError();
     });
-});
 });

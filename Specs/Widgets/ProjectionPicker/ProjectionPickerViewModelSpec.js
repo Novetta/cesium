@@ -1,16 +1,8 @@
-define([
-        'Widgets/ProjectionPicker/ProjectionPickerViewModel',
-        'Core/OrthographicFrustum',
-        'Core/PerspectiveFrustum',
-        'Scene/SceneMode',
-        'Specs/createScene'
-    ], function(
-        ProjectionPickerViewModel,
-        OrthographicFrustum,
-        PerspectiveFrustum,
-        SceneMode,
-        createScene) {
-        'use strict';
+import { OrthographicFrustum } from '../../../Source/Cesium.js';
+import { PerspectiveFrustum } from '../../../Source/Cesium.js';
+import { SceneMode } from '../../../Source/Cesium.js';
+import createScene from '../../createScene.js';
+import { ProjectionPickerViewModel } from '../../../Source/Cesium.js';
 
 describe('Widgets/ProjectionPicker/ProjectionPickerViewModel', function() {
 
@@ -97,4 +89,3 @@ describe('Widgets/ProjectionPicker/ProjectionPickerViewModel', function() {
         }).toThrowDeveloperError();
     });
 }, 'WebGL');
-});

@@ -1,14 +1,7 @@
-define([
-        'DataSources/DataSourceClock',
-        'Core/ClockRange',
-        'Core/ClockStep',
-        'Core/JulianDate'
-    ], function(
-        DataSourceClock,
-        ClockRange,
-        ClockStep,
-        JulianDate) {
-        'use strict';
+import { ClockRange } from '../../Source/Cesium.js';
+import { ClockStep } from '../../Source/Cesium.js';
+import { JulianDate } from '../../Source/Cesium.js';
+import { DataSourceClock } from '../../Source/Cesium.js';
 
 describe('DataSources/DataSourceClock', function() {
 
@@ -120,5 +113,4 @@ describe('DataSources/DataSourceClock', function() {
           expect(clock.clockStep).toEqual(ClockStep.SYSTEM_CLOCK_MULTIPLIER);
           expect(clock.multiplier).toEqual(1.0);
     });
-});
 });

@@ -1,18 +1,9 @@
-define([
-        'Core/Rectangle',
-        'Core/Cartesian3',
-        'Core/Cartographic',
-        'Core/Ellipsoid',
-        'Core/Math',
-        'Specs/createPackableSpecs'
-    ], function(
-        Rectangle,
-        Cartesian3,
-        Cartographic,
-        Ellipsoid,
-        CesiumMath,
-        createPackableSpecs) {
-        'use strict';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { Cartographic } from '../../Source/Cesium.js';
+import { Ellipsoid } from '../../Source/Cesium.js';
+import { Math as CesiumMath } from '../../Source/Cesium.js';
+import { Rectangle } from '../../Source/Cesium.js';
+import createPackableSpecs from '../createPackableSpecs.js';
 
 describe('Core/Rectangle', function() {
 
@@ -878,5 +869,4 @@ describe('Core/Rectangle', function() {
     var rectangle = new Rectangle(west, south, east, north);
     var packedInstance = [west, south, east, north];
     createPackableSpecs(Rectangle, rectangle, packedInstance);
-});
 });

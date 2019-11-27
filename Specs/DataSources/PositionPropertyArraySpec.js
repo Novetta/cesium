@@ -1,18 +1,9 @@
-define([
-        'DataSources/PositionPropertyArray',
-        'Core/Cartesian3',
-        'Core/JulianDate',
-        'Core/ReferenceFrame',
-        'DataSources/ConstantPositionProperty',
-        'DataSources/SampledPositionProperty'
-    ], function(
-        PositionPropertyArray,
-        Cartesian3,
-        JulianDate,
-        ReferenceFrame,
-        ConstantPositionProperty,
-        SampledPositionProperty) {
-        'use strict';
+import { Cartesian3 } from '../../Source/Cesium.js';
+import { JulianDate } from '../../Source/Cesium.js';
+import { ReferenceFrame } from '../../Source/Cesium.js';
+import { ConstantPositionProperty } from '../../Source/Cesium.js';
+import { PositionPropertyArray } from '../../Source/Cesium.js';
+import { SampledPositionProperty } from '../../Source/Cesium.js';
 
 describe('DataSources/PositionPropertyArray', function() {
 
@@ -111,5 +102,4 @@ describe('DataSources/PositionPropertyArray', function() {
 
         expect(property.isConstant).toBe(false);
     });
-});
 });
