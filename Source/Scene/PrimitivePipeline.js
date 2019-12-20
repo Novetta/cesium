@@ -645,6 +645,7 @@ define([
             for (var geometryIndex = 0; geometryIndex < geometriesLength; geometryIndex++) {
                 var geometry = geometries[geometryIndex];
                 var instance = instances[instanceIndex];
+                if(!instance) {continue;}
                 instance.geometry = geometry;
                 ++instanceIndex;
             }
