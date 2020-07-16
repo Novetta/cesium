@@ -19,6 +19,7 @@ import PerspectiveOffCenterFrustum from './PerspectiveOffCenterFrustum.js';
      *
      * @param {Object} [options] An object with the following properties:
      * @param {Number} [options.fov] The angle of the field of view (FOV), in radians.
+     * @param {Number} [options.fovy=0] The angle of the vertical field of view (FOV), in radians.
      * @param {Number} [options.aspectRatio] The aspect ratio of the frustum's width to it's height.
      * @param {Number} [options.near=1.0] The distance of the near plane.
      * @param {Number} [options.far=500000000.0] The distance of the far plane.
@@ -48,6 +49,7 @@ import PerspectiveOffCenterFrustum from './PerspectiveOffCenterFrustum.js';
          * @default undefined
          */
         this.fov = options.fov;
+        this.fovy = defaultValue(options.fovy, 0);
         this._fov = undefined;
         this._fovy = undefined;
 
@@ -118,6 +120,7 @@ import PerspectiveOffCenterFrustum from './PerspectiveOffCenterFrustum.js';
         startingIndex = defaultValue(startingIndex, 0);
 
         array[startingIndex++] = value.fov;
+        array[startingIndex++] = value.fovy;
         array[startingIndex++] = value.aspectRatio;
         array[startingIndex++] = value.near;
         array[startingIndex++] = value.far;
@@ -147,6 +150,7 @@ import PerspectiveOffCenterFrustum from './PerspectiveOffCenterFrustum.js';
         }
 
         result.fov = array[startingIndex++];
+        result.fovy = array[startingIndex++];
         result.aspectRatio = array[startingIndex++];
         result.near = array[startingIndex++];
         result.far = array[startingIndex++];
@@ -158,19 +162,23 @@ import PerspectiveOffCenterFrustum from './PerspectiveOffCenterFrustum.js';
 
     function update(frustum) {
         //>>includeStart('debug', pragmas.debug);
-        if (!defined(frustum.fov) || !defined(frustum.aspectRatio) || !defined(frustum.near) || !defined(frustum.far)) {
-            throw new DeveloperError('fov, aspectRatio, near, or far parameters are not set.');
+        if (!defined(frustum.fov) || !defined(frustum.fovy) ||!defined(frustum.aspectRatio) || !defined(frustum.near) || !defined(frustum.far)) {
+            throw new DeveloperError('fov, fovy, aspectRatio, near, or far parameters are not set.');
         }
         //>>includeEnd('debug');
 
         var f = frustum._offCenterFrustum;
 
-        if (frustum.fov !== frustum._fov || frustum.aspectRatio !== frustum._aspectRatio ||
+        if (frustum.fov !== frustum._fov || frustum.fovy !== frustum._fovy || frustum.aspectRatio !== frustum._aspectRatio ||
             frustum.near !== frustum._near || frustum.far !== frustum._far ||
             frustum.xOffset !== frustum._xOffset || frustum.yOffset !== frustum._yOffset) {
             //>>includeStart('debug', pragmas.debug);
             if (frustum.fov < 0 || frustum.fov >= Math.PI) {
                 throw new DeveloperError('fov must be in the range [0, PI).');
+            }
+
+            if (frustum.fovy < 0 || frustum.fovy >= Math.PI) {
+                throw new DeveloperError('fovy must be in the range [0, PI).');
             }
 
             if (frustum.aspectRatio < 0) {
@@ -184,7 +192,12 @@ import PerspectiveOffCenterFrustum from './PerspectiveOffCenterFrustum.js';
 
             frustum._aspectRatio = frustum.aspectRatio;
             frustum._fov = frustum.fov;
-            frustum._fovy = (frustum.aspectRatio <= 1) ? frustum.fov : Math.atan(Math.tan(frustum.fov * 0.5) / frustum.aspectRatio) * 2.0;
+            if (frustum.fovy === 0) {
+                frustum._fovy = (frustum.aspectRatio <= 1) ? frustum.fov : Math.atan(Math.tan(frustum.fov * 0.5) / frustum.aspectRatio) * 2.0;
+                frustum.fovy = frustum._fovy;
+            } else {
+                frustum._fovy = frustum.fovy;
+            }
             frustum._near = frustum.near;
             frustum._far = frustum.far;
             frustum._sseDenominator = 2.0 * Math.tan(0.5 * frustum._fovy);
@@ -233,20 +246,6 @@ import PerspectiveOffCenterFrustum from './PerspectiveOffCenterFrustum.js';
             get : function() {
                 update(this);
                 return this._offCenterFrustum.infiniteProjectionMatrix;
-            }
-        },
-
-        /**
-         * Gets the angle of the vertical field of view, in radians.
-         * @memberof PerspectiveFrustum.prototype
-         * @type {Number}
-         * @readonly
-         * @default undefined
-         */
-        fovy : {
-            get : function() {
-                update(this);
-                return this._fovy;
             }
         },
 
@@ -335,12 +334,14 @@ import PerspectiveOffCenterFrustum from './PerspectiveOffCenterFrustum.js';
 
         result.aspectRatio = this.aspectRatio;
         result.fov = this.fov;
+        result.fovy = this.fovy;
         result.near = this.near;
         result.far = this.far;
 
         // force update of clone to compute matrices
         result._aspectRatio = undefined;
         result._fov = undefined;
+        result._fovy = undefined;
         result._near = undefined;
         result._far = undefined;
 
@@ -365,6 +366,7 @@ import PerspectiveOffCenterFrustum from './PerspectiveOffCenterFrustum.js';
         update(other);
 
         return (this.fov === other.fov &&
+                this.fovy === other.fovy &&
                 this.aspectRatio === other.aspectRatio &&
                 this._offCenterFrustum.equals(other._offCenterFrustum));
     };
@@ -388,6 +390,7 @@ import PerspectiveOffCenterFrustum from './PerspectiveOffCenterFrustum.js';
         update(other);
 
         return (CesiumMath.equalsEpsilon(this.fov, other.fov, relativeEpsilon, absoluteEpsilon) &&
+                CesiumMath.equalsEpsilon(this.fovy, other.fovy, relativeEpsilon, absoluteEpsilon) &&
                 CesiumMath.equalsEpsilon(this.aspectRatio, other.aspectRatio, relativeEpsilon, absoluteEpsilon) &&
                 this._offCenterFrustum.equalsEpsilon(other._offCenterFrustum, relativeEpsilon, absoluteEpsilon));
     };
